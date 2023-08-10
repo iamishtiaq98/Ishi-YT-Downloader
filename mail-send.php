@@ -1,6 +1,6 @@
  <?php
 
-echo('here'); exit;
+
  if($_POST)
  {
      
