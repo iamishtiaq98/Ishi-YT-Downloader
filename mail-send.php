@@ -1,5 +1,5 @@
  <?php
- if($_POST && isset($_FILES['file']))
+ if($_POST)
  {
      
  	$sender_name = filter_var($_POST["s_name"], FILTER_SANITIZE_STRING);
