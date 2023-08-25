@@ -69,12 +69,33 @@ function formatListMaker(Obj) {
 		}
 	}
 
+
 	$(document.body).on("click", ".quality-item", (e) => {
-		var item = e.currentTarget;
-		var link = $(item).data("link");
+    var item = e.currentTarget;
+    var link = $(item).data("link");
+    var fileName = "yourFileName.ext"; // Replace with your desired file name
+    var a = $("<a>")
+        .attr("target", "_blank")
+        .attr("download", fileName)
+        .attr("href", link)
+        .appendTo("body");
+    a[0].click();
+    setTimeout(() => {
+        a.remove();
+    }, 5000);
+});
+
+
+	// $(document.body).on("click", ".quality-item", (e) => {
+	// 	var item = e.currentTarget;
+	// 	var link = $(item).data("link");
+
 		
-		window.open(link);
-	});
+
+		
+		
+	// 	// window.open(link);
+	// });
 }
 visualViewport.addEventListener("resize", setViewHeight);
 function setViewHeight() {
